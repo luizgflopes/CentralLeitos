@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
+      <SubComponents>
+        <Menu class="javax.swing.JMenu" name="MenuInicio">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Inicio"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuInicioActionPerformed"/>
+          </Events>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="MenuCadastro">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cadastro"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="MenuCadastroEspecialidade">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Especialidade"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuCadastroEspecialidadeActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="MenuCadastroMedico">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Medico"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuCadastroMedicoActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="MenuCadastroPaciente">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Paciente"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="MenuCadastroProcedimento">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Procedimento"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuCadastroProcedimentoActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="MenuCadastroUsuario">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Usu&#xe1;rio"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuCadastroUsuarioActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="MenuCadastroUnidade">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Unidade"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuCadastroUnidadeActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="MenuRelatorio">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Relat&#xf3;rio"/>
+          </Properties>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="MenuSair">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Sair"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="MenuSairMouseClicked"/>
+          </Events>
+        </Menu>
+      </SubComponents>
+    </Menu>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="title" type="java.lang.String" value="Menu Controle Leito"/>
+    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+      <Color id="Cursor Default"/>
+    </Property>
+    <Property name="extendedState" type="int" value="6"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
+  </SyntheticProperties>
+  <Events>
+    <EventHandler event="windowOpened" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="formWindowOpened"/>
+  </Events>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="109" max="32767" attributes="0"/>
+              <Component id="LabelImagem" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+              <Component id="LabelImagem" min="-2" pref="561" max="-2" attributes="0"/>
+              <EmptySpace pref="63" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="LabelImagem">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/br/com/newtonpaiva/img/equipe.png"/>
+        </Property>
+        <Property name="autoscrolls" type="boolean" value="true"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
