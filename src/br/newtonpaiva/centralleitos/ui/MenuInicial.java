@@ -5,7 +5,7 @@
  */
 package br.newtonpaiva.centralleitos.ui;
 
-import com.sun.glass.events.WindowEvent;
+//import com.sun.glass.events.WindowEvent;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 /**

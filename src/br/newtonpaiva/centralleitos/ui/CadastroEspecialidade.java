@@ -28,6 +28,7 @@ public class CadastroEspecialidade extends javax.swing.JFrame {
     public CadastroEspecialidade() {
         initComponents();
         em = Persistence.createEntityManagerFactory("CentralLeitosPU").createEntityManager();
+        btnListar.doClick();
     }
 
     /**
@@ -42,7 +43,7 @@ public class CadastroEspecialidade extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         txtDesc = new javax.swing.JTextField();
         btnSalvar = new javax.swing.JButton();
-        btnBuscar = new javax.swing.JButton();
+        btnListar = new javax.swing.JButton();
         btnLimpar = new javax.swing.JButton();
         btnExcluir = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -60,10 +61,10 @@ public class CadastroEspecialidade extends javax.swing.JFrame {
             }
         });
 
-        btnBuscar.setText("Buscar");
-        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+        btnListar.setText("Listar");
+        btnListar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarActionPerformed(evt);
+                btnListarActionPerformed(evt);
             }
         });
 
@@ -121,7 +122,7 @@ public class CadastroEspecialidade extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnSalvar)
                         .addGap(18, 18, 18)
-                        .addComponent(btnBuscar)
+                        .addComponent(btnListar)
                         .addGap(18, 18, 18)
                         .addComponent(btnLimpar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -146,7 +147,7 @@ public class CadastroEspecialidade extends javax.swing.JFrame {
                 .addGap(55, 55, 55)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSalvar)
-                    .addComponent(btnBuscar)
+                    .addComponent(btnListar)
                     .addComponent(btnLimpar)
                     .addComponent(btnExcluir))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -196,14 +197,14 @@ public class CadastroEspecialidade extends javax.swing.JFrame {
         }
         idEspecialidade = null;
         btnLimpar.doClick();
-        btnBuscar.doClick();
+        btnListar.doClick();
         
       //  em.getTransaction().commit();
 
         
     }//GEN-LAST:event_btnSalvarActionPerformed
 
-    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+    private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
         // TODO add your handling code here:
         
         List<Especialidade> especialidades = em.createQuery("SELECT e FROM Especialidade e").getResultList();
@@ -214,7 +215,7 @@ public class CadastroEspecialidade extends javax.swing.JFrame {
         for (Especialidade e : especialidades) {
             model.addRow(new Object[]{e.getId(), e.getDescricao()});
         }
-    }//GEN-LAST:event_btnBuscarActionPerformed
+    }//GEN-LAST:event_btnListarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
         // TODO add your handling code here:
@@ -230,7 +231,7 @@ public class CadastroEspecialidade extends javax.swing.JFrame {
             em.getTransaction().begin();
             em.remove(e);
             em.getTransaction().commit();
-            btnBuscar.doClick();
+            btnListar.doClick();
 
             JOptionPane.showMessageDialog(this, "Especialidade removida com sucesso.");
         }
@@ -287,9 +288,9 @@ public class CadastroEspecialidade extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnLimpar;
+    private javax.swing.JButton btnListar;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
