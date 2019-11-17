@@ -51,6 +51,7 @@ public class CadastroProcedimento extends javax.swing.JFrame {
         btnLimpar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Cadastrar Procedimentos");
 
         jLabel1.setText("Descrição:");
 

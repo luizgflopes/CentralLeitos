@@ -638,6 +638,7 @@ public class TelaCrudPaciente extends javax.swing.JDialog {
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {cbxSexo, jLabel1, jLabel2, jLabel4, lblName, lblNascimento, lblSexo, txtAltura, txtCpf, txtDtaNascimento, txtName, txtPeso});
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed

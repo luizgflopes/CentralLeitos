@@ -50,6 +50,7 @@ public class CadastroEspecialidade extends javax.swing.JFrame {
         tblEspecialidade = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Cadastrar Especialidade");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel1.setText("Descrição:");

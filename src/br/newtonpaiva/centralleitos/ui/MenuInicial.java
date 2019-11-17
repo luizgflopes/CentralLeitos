@@ -30,12 +30,12 @@ public class MenuInicial extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        LabelImagem = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         MenuInicio = new javax.swing.JMenu();
         MenuCadastro = new javax.swing.JMenu();
         MenuCadastroEspecialidade = new javax.swing.JMenuItem();
         MenuCadastroMedico = new javax.swing.JMenuItem();
+        MenuCadastroOcupacao = new javax.swing.JMenuItem();
         MenuCadastroPaciente = new javax.swing.JMenuItem();
         MenuCadastroProcedimento = new javax.swing.JMenuItem();
         MenuCadastroUsuario = new javax.swing.JMenuItem();
@@ -47,14 +47,6 @@ public class MenuInicial extends javax.swing.JFrame {
         setTitle("Menu Controle Leito");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setExtendedState(6);
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowOpened(java.awt.event.WindowEvent evt) {
-                formWindowOpened(evt);
-            }
-        });
-
-        LabelImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/newtonpaiva/img/equipe.png"))); // NOI18N
-        LabelImagem.setAutoscrolls(true);
 
         MenuInicio.setText("Inicio");
         MenuInicio.addActionListener(new java.awt.event.ActionListener() {
@@ -82,7 +74,20 @@ public class MenuInicial extends javax.swing.JFrame {
         });
         MenuCadastro.add(MenuCadastroMedico);
 
+        MenuCadastroOcupacao.setText("Ocupação");
+        MenuCadastroOcupacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuCadastroOcupacaoActionPerformed(evt);
+            }
+        });
+        MenuCadastro.add(MenuCadastroOcupacao);
+
         MenuCadastroPaciente.setText("Paciente");
+        MenuCadastroPaciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuCadastroPacienteActionPerformed(evt);
+            }
+        });
         MenuCadastro.add(MenuCadastroPaciente);
 
         MenuCadastroProcedimento.setText("Procedimento");
@@ -128,17 +133,11 @@ public class MenuInicial extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(109, Short.MAX_VALUE)
-                .addComponent(LabelImagem)
-                .addGap(83, 83, 83))
+            .addGap(0, 764, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(LabelImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 561, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(63, Short.MAX_VALUE))
+            .addGap(0, 662, Short.MAX_VALUE)
         );
 
         pack();
@@ -159,13 +158,10 @@ public class MenuInicial extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_MenuSairMouseClicked
 
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formWindowOpened
-
     private void MenuCadastroEspecialidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCadastroEspecialidadeActionPerformed
         // TODO add your handling code here:
         new CadastroEspecialidade().setVisible(true);
+        
     }//GEN-LAST:event_MenuCadastroEspecialidadeActionPerformed
 
     private void MenuCadastroProcedimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCadastroProcedimentoActionPerformed
@@ -187,6 +183,16 @@ public class MenuInicial extends javax.swing.JFrame {
         // TODO add your handling code here:
     
     }//GEN-LAST:event_MenuCadastroUnidadeActionPerformed
+
+    private void MenuCadastroPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCadastroPacienteActionPerformed
+        // TODO add your handling code here:
+        new TelaCrudPaciente(this, true).setVisible(true);
+    }//GEN-LAST:event_MenuCadastroPacienteActionPerformed
+
+    private void MenuCadastroOcupacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCadastroOcupacaoActionPerformed
+        // TODO add your handling code here:
+        new TelaCrudOcupacao(this, true).setVisible(true);
+    }//GEN-LAST:event_MenuCadastroOcupacaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -225,10 +231,10 @@ public class MenuInicial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel LabelImagem;
     private javax.swing.JMenu MenuCadastro;
     private javax.swing.JMenuItem MenuCadastroEspecialidade;
     private javax.swing.JMenuItem MenuCadastroMedico;
+    private javax.swing.JMenuItem MenuCadastroOcupacao;
     private javax.swing.JMenuItem MenuCadastroPaciente;
     private javax.swing.JMenuItem MenuCadastroProcedimento;
     private javax.swing.JMenuItem MenuCadastroUnidade;
