@@ -10,18 +10,24 @@ import br.com.parg.viacep.ViaCEP;
 import br.com.parg.viacep.ViaCEPException;
 import br.newtonpaiva.centralleitos.modelos.Unidade;
 import br.newtonpaiva.centralleitos.modelos.AutenticConfig;
+import br.newtonpaiva.centralleitos.modelos.ConectaBanco;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import javax.swing.JOptionPane;
 import java.util.Random;
 import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -256,30 +262,30 @@ public class TelaCadastroUnidade extends javax.swing.JDialog {
         
         UUID codAut = UUID.randomUUID();
         
-//         try{
-//            
-//        // Cria arquivo
-//        File file = new File("configAut.txt");
-//        
-//        // Se o arquivo nao existir, ele gera
-//        if (!file.exists()) {
-//                file.createNewFile();
-//            }
-//      
-//                
-//        // Prepara para escrever no arquivo
-//        FileWriter fw = new FileWriter(file.getAbsoluteFile());
-//            BufferedWriter bw = new BufferedWriter(fw);
-//            
-//        // Escreve e fecha arquivo
-//        bw.write(String.valueOf(codAut));
-//            bw.close();
-//            
-//        System.out.println("Feito =D");
-//            
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+         try{
+            
+        // Cria arquivo
+        File file = new File("configAut.txt");
+        
+        // Se o arquivo nao existir, ele gera
+        if (!file.exists()) {
+                file.createNewFile();
+            }
+      
+                
+        // Prepara para escrever no arquivo
+        FileWriter fw = new FileWriter(file.getAbsoluteFile());
+            BufferedWriter bw = new BufferedWriter(fw);
+            
+        // Escreve e fecha arquivo
+        bw.write(String.valueOf(codAut));
+            bw.close();
+            
+        System.out.println("Feito =D");
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         
         
         u.setNome(txtNome.getText());
@@ -315,37 +321,29 @@ public class TelaCadastroUnidade extends javax.swing.JDialog {
             BufferedReader reader = new BufferedReader(ler);  
             String consulta;
             while( (consulta = reader.readLine()) != null ){
-                System.out.println(consulta);
+                System.out.println("esta é a consulta: " + consulta);
             }
             
-            if(consulta == u.getAutCod()){
-                System.out.println("Código verificado");}
-            else{
-                System.out.println("unidade não encontrada");
-        
+            ConectaBanco con = new ConectaBanco();
+            
+            Statement st = con.con.createStatement();
+            
+            st.executeQuery("Select * from unidade where AUTCOD = consulta ");
+            
+            ResultSet rs = st.getResultSet();
+            while (rs.next()){
+                System.out.println(rs.getString("AUTCOD"));
+            }
+            
+                    
     }
-     }
+     
     catch (IOException e) {
             e.printStackTrace();
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaCadastroUnidade.class.getName()).log(Level.SEVERE, null, ex);
         }
-    
-    
-                      
-           
-           
-   
-       
-        
-        
 
-        
-        
-        
-        
-       
-        
-        
-        
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void txtNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeroActionPerformed
