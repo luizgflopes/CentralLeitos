@@ -181,7 +181,9 @@ public class MenuInicial extends javax.swing.JFrame {
 
     private void MenuCadastroUnidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCadastroUnidadeActionPerformed
         // TODO add your handling code here:
-    
+    TelaTabelaUnidade tela = new TelaTabelaUnidade(new javax.swing.JFrame(), true);
+        
+        tela.setVisible(true);
     }//GEN-LAST:event_MenuCadastroUnidadeActionPerformed
 
     private void MenuCadastroPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCadastroPacienteActionPerformed
