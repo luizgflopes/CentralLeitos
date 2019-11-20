@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.newtopaiva.centralleitos.uil;
+package br.newtonpaiva.centralleitos.ui;
 
 import br.newtonpaiva.centralleitos.modelos.Usuario;
 import java.util.List;
