@@ -146,6 +146,7 @@ public class MenuInicial extends javax.swing.JFrame {
 
     private void MenuCadastroMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCadastroMedicoActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
         new CadastroMedico().setVisible(true);
     }//GEN-LAST:event_MenuCadastroMedicoActionPerformed
 
@@ -160,17 +161,20 @@ public class MenuInicial extends javax.swing.JFrame {
 
     private void MenuCadastroEspecialidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCadastroEspecialidadeActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
         new CadastroEspecialidade().setVisible(true);
-        
     }//GEN-LAST:event_MenuCadastroEspecialidadeActionPerformed
 
     private void MenuCadastroProcedimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCadastroProcedimentoActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
         new CadastroProcedimento().setVisible(true);
     }//GEN-LAST:event_MenuCadastroProcedimentoActionPerformed
 
     private void MenuCadastroUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCadastroUsuarioActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
+        new TelaCrudUsuario(this, true).setVisible(true);
        
     }//GEN-LAST:event_MenuCadastroUsuarioActionPerformed
 
@@ -181,18 +185,22 @@ public class MenuInicial extends javax.swing.JFrame {
 
     private void MenuCadastroUnidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCadastroUnidadeActionPerformed
         // TODO add your handling code here:
-    TelaTabelaUnidade tela = new TelaTabelaUnidade(new javax.swing.JFrame(), true);
-        
+        /*TelaTabelaUnidade tela = new TelaTabelaUnidade(new javax.swing.JFrame(), true);
         tela.setVisible(true);
+        */
+        this.setVisible(false);
+        new TelaCadastroUnidade(this, true).setVisible(true);
     }//GEN-LAST:event_MenuCadastroUnidadeActionPerformed
 
     private void MenuCadastroPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCadastroPacienteActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
         new TelaCrudPaciente(this, true).setVisible(true);
     }//GEN-LAST:event_MenuCadastroPacienteActionPerformed
 
     private void MenuCadastroOcupacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCadastroOcupacaoActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
         new TelaCrudOcupacao(this, true).setVisible(true);
     }//GEN-LAST:event_MenuCadastroOcupacaoActionPerformed
 
