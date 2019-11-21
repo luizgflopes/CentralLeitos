@@ -142,6 +142,11 @@ public class TelaCrudPaciente extends javax.swing.JDialog {
         jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         lblName.setText("Nome:");
 
@@ -840,6 +845,11 @@ public class TelaCrudPaciente extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(null, ex);//,JOptionPane.WARNING_MESSAGE);
         }//"Falha ao Buscar o CEP, preencha manualmente","AVISO!"
     }//GEN-LAST:event_txtCepFocusLost
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+        new MenuInicial().setVisible(true);
+    }//GEN-LAST:event_formWindowClosed
 
     /**
      * @param args the command line arguments

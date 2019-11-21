@@ -110,7 +110,7 @@ public class TelaCadastroUnidade extends javax.swing.JDialog {
 
         jLabel3.setText("CEP:");
 
-        jLabel4.setText("Rua");
+        jLabel4.setText("Rua:");
 
         btnLimpar.setText("LIMPAR");
         btnLimpar.addActionListener(new java.awt.event.ActionListener() {
@@ -140,7 +140,7 @@ public class TelaCadastroUnidade extends javax.swing.JDialog {
             ex.printStackTrace();
         }
 
-        jLabel11.setText("Bairro");
+        jLabel11.setText("Bairro:");
 
         txtUf.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<Selecionar>", "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
         txtUf.addActionListener(new java.awt.event.ActionListener() {
@@ -160,15 +160,6 @@ public class TelaCadastroUnidade extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(txtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(txtRua, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -198,14 +189,25 @@ public class TelaCadastroUnidade extends javax.swing.JDialog {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jLabel11)
-                                            .addComponent(txtBairro)
-                                            .addComponent(txtUf, 0, 118, Short.MAX_VALUE)))
+                                        .addComponent(txtUf, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(10, 10, 10)
-                                        .addComponent(jLabel7)))))
-                        .addGap(30, 30, 30))))
+                                        .addComponent(jLabel7)))
+                                .addGap(18, 18, 18)))
+                        .addGap(30, 30, 30))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(txtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(txtRua, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11)
+                            .addComponent(txtBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -287,7 +289,7 @@ public class TelaCadastroUnidade extends javax.swing.JDialog {
         bw.write(String.valueOf(codAut));
             bw.close();
             
-        System.out.println("Feito =D");
+             System.out.println("Feito =D");
             
         } catch (IOException e) {
             e.printStackTrace();
@@ -305,14 +307,14 @@ public class TelaCadastroUnidade extends javax.swing.JDialog {
         
         
         
-//        u.setEmail(txtEmail.getText());
-  //      u.setSenha(txtSenha.getText());
+    //      u.setEmail(txtEmail.getText());
+    //      u.setSenha(txtSenha.getText());
         
         
-        em.getTransaction().commit();
+        /*em.getTransaction().commit();
         JOptionPane
-                .showMessageDialog(this,"Comando executado com suesso!");
-        
+                .showMessageDialog(this,"Unidade cadastrada com sucesso!");
+        */
         btnLimpar.doClick();
         
         
@@ -325,20 +327,23 @@ public class TelaCadastroUnidade extends javax.swing.JDialog {
      // Le o arquivo
             FileReader ler = new FileReader("configAut.txt");
             BufferedReader reader = new BufferedReader(ler);  
-            String consulta;
-            while( (consulta = reader.readLine()) != null ){
-                System.out.println("esta é a consulta: " + consulta);
+            String cod;
+            while( (cod = reader.readLine()) != null ){
+                System.out.println("esse e o codigo do arquivo txt: " + cod);
+                
             }
             
-            ConectaBanco con = new ConectaBanco();
             
+            ConectaBanco con = new ConectaBanco();
+            con.conectar();
             Statement st = con.con.createStatement();
             
-            st.executeQuery("Select * from unidade where AUTCOD = consulta ");
+            st.executeQuery("Select AUTCOD from unidade");
             
             ResultSet rs = st.getResultSet();
             while (rs.next()){
-                System.out.println(rs.getString("AUTCOD"));
+                //JOptionPane.showMessageDialog(this,rs.getString("COD"));
+                JOptionPane.showMessageDialog(this,rs.getString("AUTCOD"));
             }
             
                     
@@ -349,6 +354,11 @@ public class TelaCadastroUnidade extends javax.swing.JDialog {
         } catch (SQLException ex) {
             Logger.getLogger(TelaCadastroUnidade.class.getName()).log(Level.SEVERE, null, ex);
         }
+    finally{
+        em.getTransaction().commit();
+        JOptionPane
+                .showMessageDialog(this,"Unidade cadastrada com sucesso!");
+    }
 
     }//GEN-LAST:event_btnSalvarActionPerformed
 
@@ -363,6 +373,7 @@ public class TelaCadastroUnidade extends javax.swing.JDialog {
         txtRua.setText("");
         txtNumero.setText("");
         txtCidade.setText("");
+        txtBairro.setText("");
         txtUf.setSelectedIndex(0);
         txtTelefone.setText("");
 
