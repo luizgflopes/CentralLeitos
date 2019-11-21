@@ -47,6 +47,9 @@ public class Unidade {
     @Column
     private String autCod;
     
+    @Column
+    private String cod;
+  
 
     /**
      * @return the id
@@ -203,6 +206,12 @@ public class Unidade {
     public void setAutCod(String autCod) {
         this.autCod = autCod;
     }
+
+    public void setcod(String toString) {
+        this.cod = cod;
+    }
+
+   
 
 
 
