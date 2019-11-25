@@ -8,21 +8,23 @@ package br.newtonpaiva.centralleitos.ui;
 
 import br.com.parg.viacep.ViaCEP;
 import br.com.parg.viacep.ViaCEPException;
-import br.newtonpaiva.centralleitos.modelos.ConectaBanco;
 import br.newtonpaiva.centralleitos.modelos.Unidade;
-import br.newtonpaiva.centralleitos.modelos.Configuracoes;
+import br.newtonpaiva.centralleitos.modelos.AutenticConfig;
+import br.newtonpaiva.centralleitos.modelos.ConectaBanco;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import javax.swing.JOptionPane;
+import java.util.Random;
 import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -79,6 +81,11 @@ public class TelaCadastroUnidade extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastrar Unidade");
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         jLabel7.setText("UF:");
 
@@ -241,6 +248,7 @@ public class TelaCadastroUnidade extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
@@ -297,7 +305,7 @@ public class TelaCadastroUnidade extends javax.swing.JDialog {
         
         
         
-  //      u.setEmail(txtEmail.getText());
+//        u.setEmail(txtEmail.getText());
   //      u.setSenha(txtSenha.getText());
         
         
@@ -307,16 +315,40 @@ public class TelaCadastroUnidade extends javax.swing.JDialog {
         
         btnLimpar.doClick();
         
-        Configuracoes aut = new Configuracoes();
         
-        try {
-            String codigo = aut.pegaCodigoUnidade();
-        } catch (IOException ex) {
-            Logger.getLogger(TelaCadastroUnidade.class.getName()).log(Level.SEVERE, null, ex);
-        }
         
        
-        
+
+    
+   
+    try{
+     // Le o arquivo
+            FileReader ler = new FileReader("configAut.txt");
+            BufferedReader reader = new BufferedReader(ler);  
+            String consulta;
+            while( (consulta = reader.readLine()) != null ){
+                System.out.println("esta é a consulta: " + consulta);
+            }
+            
+            ConectaBanco con = new ConectaBanco();
+            
+            Statement st = con.con.createStatement();
+            
+            st.executeQuery("Select * from unidade where AUTCOD = consulta ");
+            
+            ResultSet rs = st.getResultSet();
+            while (rs.next()){
+                System.out.println(rs.getString("AUTCOD"));
+            }
+            
+                    
+    }
+     
+    catch (IOException e) {
+            e.printStackTrace();
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaCadastroUnidade.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }//GEN-LAST:event_btnSalvarActionPerformed
 
@@ -330,7 +362,6 @@ public class TelaCadastroUnidade extends javax.swing.JDialog {
         txtCep.setText("");
         txtRua.setText("");
         txtNumero.setText("");
-        txtBairro.setText("");
         txtCidade.setText("");
         txtUf.setSelectedIndex(0);
         txtTelefone.setText("");
@@ -556,6 +587,11 @@ public class TelaCadastroUnidade extends javax.swing.JDialog {
     private void txtUfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUfActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUfActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+        new MenuInicial().setVisible(true);
+    }//GEN-LAST:event_formWindowClosed
        
    
     /**
