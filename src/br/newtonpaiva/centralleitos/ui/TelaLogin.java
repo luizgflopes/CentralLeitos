@@ -145,9 +145,11 @@ public class TelaLogin extends javax.swing.JDialog {
             this.setVisible(false);
             autenticado = true;
             JOptionPane.showMessageDialog(this, "Logado com sucesso!");
+            MenuInicial logado = new MenuInicial();
+            logado.setVisible(true);
         }
             
-        else if(numTentativas >= 3) {
+        else if(numTentativas >= 5) {
             JOptionPane.showMessageDialog(this, "Máximo de tentativas atingidas, o sistema será finalizado!");
             autenticado = false;
         } 
