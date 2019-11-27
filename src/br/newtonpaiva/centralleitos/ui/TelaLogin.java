@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Kaique Marques
+ *
  */
 public class TelaLogin extends javax.swing.JDialog {
     private Integer numTentativas = 0;
