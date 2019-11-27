@@ -6,13 +6,8 @@
 package br.newtonpaiva.centralleitos.ui;
 
 //import com.sun.glass.events.WindowEvent;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
-import net.sf.jasperreports.engine.JRException;
-import br.com.newtonpaiva.relatorio.conf.AbrirRelatorio; 
-import br.com.newtonpaiva.relatorios.RelatorioMedico;
 /**
  *
  * @author Gustavo
@@ -46,7 +41,6 @@ public class MenuInicial extends javax.swing.JFrame {
         MenuCadastroUsuario = new javax.swing.JMenuItem();
         MenuCadastroUnidade = new javax.swing.JMenuItem();
         MenuRelatorio = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
         MenuSair = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -123,15 +117,6 @@ public class MenuInicial extends javax.swing.JFrame {
         jMenuBar1.add(MenuCadastro);
 
         MenuRelatorio.setText("Relatório");
-
-        jMenuItem1.setText("Médico");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        MenuRelatorio.add(jMenuItem1);
-
         jMenuBar1.add(MenuRelatorio);
 
         MenuSair.setText("Sair");
@@ -219,14 +204,6 @@ public class MenuInicial extends javax.swing.JFrame {
         new TelaCrudOcupacao(this, true).setVisible(true);
     }//GEN-LAST:event_MenuCadastroOcupacaoActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-        RelatorioMedico rel = new RelatorioMedico();
-        
-        //rel.abrirRelatorioClientes();
-        rel.abrirRelatorioMedico();
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -276,6 +253,5 @@ public class MenuInicial extends javax.swing.JFrame {
     private javax.swing.JMenu MenuRelatorio;
     private javax.swing.JMenu MenuSair;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables
 }
