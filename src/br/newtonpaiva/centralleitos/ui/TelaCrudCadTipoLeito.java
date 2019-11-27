@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package br.newtonpaiva.centralleitos.ui;
-import br.newtonpaiva.centralleitos.modelo.TipoLeito;
+import br.newtonpaiva.centralleitos.modelos.TipoLeito;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;

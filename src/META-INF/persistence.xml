@@ -12,12 +12,15 @@
     <class>br.newtonpaiva.centralleitos.modelos.Endereco</class>
     <class>br.newtonpaiva.centralleitos.modelos.Unidade</class>
     <class>br.newtonpaiva.centralleitos.modelos.Usuario</class>
+    <class>br.newtonpaiva.centralleitos.modelos.Ala</class>
+    <class>br.newtonpaiva.centralleitos.modelos.QuantidadeLeitos</class>
+    <class>br.newtonpaiva.centralleitos.modelos.TipoLeito</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/central-leitos-db?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
       <property name="javax.persistence.jdbc.password" value=""/>
-      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+      <property name="javax.persistence.schema-generation.database.action" value="create"/>
       <property name="javax.persistence.sql-load-script-source" value="META-INF/init-db.sql"/>
       <property name="eclipselink.logging.level" value="FINE"/>
     </properties>

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.newtonpaiva.centralleitos.modelo;
+package br.newtonpaiva.centralleitos.modelos;
 
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -37,7 +37,7 @@ public class TipoLeito {
     //letra final até que seja gerada uma chave única
     
     //relação com a tabela Leito (através da variável chave)
-    @OneToMany(mappedBy = "tipoLeito", cascade = CascadeType.ALL)
+    
     private List<String> leitos;
     
     public Integer getId() {

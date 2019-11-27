@@ -6,7 +6,6 @@
             <name>central-leitos-Luiz</name>
             <source-roots>
                 <root id="src.dir"/>
-                <root id="src.designerRelatorio.dir" name="Relatórios"/>
             </source-roots>
             <test-roots>
                 <root id="test.src.dir"/>
