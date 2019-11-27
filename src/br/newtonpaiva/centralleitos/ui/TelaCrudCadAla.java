@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package br.newtonpaiva.centralleitos.ui;
-import br.newtonpaiva.centralleitos.modelos.Ala;
+import br.newtonpaiva.centralleitos.modelo.Ala;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;

@@ -5,6 +5,7 @@
  */
 package br.newtonpaiva.centralleitos.ui;
 
+import br.newtonpaiva.centralleitos.modelos.Ocupacao;
 import br.newtonpaiva.centralleitos.modelos.Paciente;
 import java.util.List;
 import javax.persistence.EntityManager;

@@ -9,7 +9,7 @@ package br.newtonpaiva.centralleitos.ui;
 import br.com.parg.viacep.ViaCEP;
 import br.com.parg.viacep.ViaCEPException;
 import br.newtonpaiva.centralleitos.modelos.Endereco;
-
+import br.newtonpaiva.centralleitos.modelos.Leito;
 import br.newtonpaiva.centralleitos.modelos.Paciente;
 import br.newtonpaiva.centralleitos.modelos.Sexo;
 import java.text.ParseException;

@@ -1,13 +1,13 @@
-    /*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package br.newtonpaiva.centralleitos.ui;
 
-import br.newtonpaiva.centralleitos.modelos.Ala;
-import br.newtonpaiva.centralleitos.modelos.TipoLeito;
-import br.newtonpaiva.centralleitos.modelos.Leito;
+import br.newtonpaiva.centralleitos.modelo.Ala;
+import br.newtonpaiva.centralleitos.modelo.TipoLeito;
+import br.newtonpaiva.centralleitos.modelo.Leito;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
@@ -281,7 +281,7 @@ public class TelaCrudCadastroLeito extends javax.swing.JDialog {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) { 
-                    javax.swing.UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel"); 
+                    UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel"); 
                 break; 
                 }
             }

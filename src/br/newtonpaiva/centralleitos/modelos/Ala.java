@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.newtonpaiva.centralleitos.modelos;
+package br.newtonpaiva.centralleitos.modelo;
 
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -53,12 +53,12 @@ public class Ala {
     //letra final até que seja gerada uma chave única
     
     //STATUS NA TELA: variável gerada automaticamente apenas para visualização
-    
+    @OneToOne
     private String unidade;
     //valor automático de acordo com a do usuário que cadastra a ala
     
     //relação com a tabela Leito (através da variável chave)
-    
+    @OneToMany(mappedBy = "ala", cascade = CascadeType.ALL)
     private List<String> leitos;
     
     public Integer getId() {

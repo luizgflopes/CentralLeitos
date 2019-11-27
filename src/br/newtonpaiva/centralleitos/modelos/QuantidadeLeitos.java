@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.newtonpaiva.centralleitos.modelos;
+package br.newtonpaiva.centralleitos.modelo;
 
 import java.util.List;
 import javax.persistence.Column;
@@ -28,12 +28,12 @@ public class QuantidadeLeitos {
     
     //relação com a tabela TipoLeito (através da variável chave)
     //STATUS NA TELA: variável gerada automaticamente apenas para visualização
-    
+    @ManyToMany
     private List<String> tipoLeito;
     
     //relação com a tabela Ala (através da variável chave)
     //STATUS NA TELA: variável gerada automaticamente apenas para visualização
-    
+    @ManyToMany
     private List<String> ala;
     
     //STATUS NA TELA: variável gerada automaticamente apenas para visualização
